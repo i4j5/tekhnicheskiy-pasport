@@ -114,6 +114,9 @@ $(document).ready(()=>{
 	        var form = $(form),
 	        str = form.serialize()
 
+	        let roistat = window.roistat.visit || null
+	        str = str + '&roistat=' + roistat
+
 	        let btn = form.children("[type='submit']")
 	        //let btnText = btn.val()
 	        //btn.val('Обработка...')
@@ -122,7 +125,7 @@ $(document).ready(()=>{
 	        let download = form.children("[name='download']").val()
 
 	        $.ajax({
-	          url: 'http://lp.bk-invent.ru/send.php',
+	          url: '//lp.bk-invent.ru/send.php',
 	          type: 'post',
 	          data: str
 	        })
@@ -137,6 +140,7 @@ $(document).ready(()=>{
 	           }
 	           yaCounter51918635.reachGoal(yatarget)
 	           yatarget = 'order'
+	           yaCounter53737453.reachGoal('site')
 	        })
 	        .always(function() {
 			   //btn.val(btnText)
